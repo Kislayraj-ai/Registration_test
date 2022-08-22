@@ -59,10 +59,18 @@ body {
   box-shadow: 0px 2px 3px rgb(198, 197, 197);
 }
 .actions button {
-  padding: 0.25rem 0.5rem;
+  padding: 0.4rem 0.5rem;
   letter-spacing: 0.1rem;
   background: rgb(0, 127, 246);
   cursor: pointer;
   outline: none;
   border: none;
+}
+@media screen and (max-width: 600px) {
+  #main-form {
+    width: 80%;
+  }
+  .form-group input {
+    width: 95%;
+  }
 }

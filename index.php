@@ -13,7 +13,7 @@
 <body>
     <section id="main">
         <article id="main-form">
-            <h2>form fillup</h2>
+            <h2>registration form</h2>
 
             <!-- input fileds -->
             <!-- name -->
