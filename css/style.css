@@ -21,7 +21,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #999;
+  background: rgb(225, 224, 224);
 }
 
 #main-form {
@@ -53,24 +53,52 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 1px solid rgb(198, 197, 197);
+  border: 0.5px solid rgb(198, 197, 197);
   border-radius: 0.1rem;
   outline: none;
   box-shadow: 0px 2px 3px rgb(198, 197, 197);
 }
 .actions button {
-  padding: 0.4rem 0.5rem;
+  padding: 0.25rem 0.5rem;
   letter-spacing: 0.1rem;
   background: rgb(0, 127, 246);
+  color: #fff;
+  box-shadow: 0px 2px 3px rgb(198, 197, 197);
   cursor: pointer;
   outline: none;
   border: none;
 }
+.actions button:hover {
+  background: rgb(1, 115, 222);
+}
+
 @media screen and (max-width: 600px) {
   #main-form {
     width: 80%;
   }
-  .form-group input {
-    width: 95%;
+
+  #main-form input {
+    width: 90%;
+  }
+
+  #main-form h2 {
+    font-size: 1rem;
+  }
+  #main-form input,
+  .actions button {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  #main-form {
+    width: 70%;
+  }
+
+  #main-form h2 {
+    font-size: 1.2rem;
+  }
+  #main-form input,
+  .actions button {
+    font-size: 0.8rem;
   }
 }
