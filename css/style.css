@@ -23,12 +23,20 @@ body {
   align-items: center;
   background: rgb(225, 224, 224);
 }
-
-#main-form {
-  width: 50%;
-  /* height: 50%; */
-  padding: 1rem;
+#container {
+  width: 60%;
   background-color: #fff;
+  height: 70%;
+  padding: 1rem;
+  /* overflow-y: hidden; */
+  position: relative;
+}
+
+#main-form,
+#login-form {
+  width: 90%;
+  padding: 0.5rem;
+  position: absolute;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -36,6 +44,27 @@ body {
   border-radius: 0.2rem;
   gap: 1.6rem;
 }
+#login-form {
+  width: 90%;
+  background-color: #fff;
+}
+.login-form {
+  visibility: visible;
+  opacity: 2;
+}
+.reg-form {
+  visibility: hidden;
+  opacity: 0;
+}
+.reg-form.show {
+  visibility: visible;
+  opacity: 5;
+}
+.login-form.hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
 #main-form h2 {
   margin-bottom: 2rem;
   letter-spacing: 0.1rem;

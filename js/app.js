@@ -5,6 +5,11 @@ const age = get('#age');
 const mob = get('#mob');
 const email = get('#email');
 const submitBtn = get('#submit');
+const passwrd = get('#passwrd');
+
+/*===form selection ====*/
+const reg_form = get('.reg-form');
+const login_form = get('.login-form');
 
 submitBtn.addEventListener('click', (e) => {
   //   console.log('Hello');
@@ -14,6 +19,7 @@ submitBtn.addEventListener('click', (e) => {
       age: age.value,
       mob: mob.value,
       email: email.value,
+      passwrd: passwrd.value,
     };
     const response = await fetch('./php_data/form_data.php', {
       method: 'POST',
@@ -24,8 +30,10 @@ submitBtn.addEventListener('click', (e) => {
     });
 
     const data = await response.json();
-    // console.log(data);
+    console.log(data);
   };
 
   sendInfo();
+  login_form.classList.remove('hide');
+  reg_form.classList.remove('show');
 });

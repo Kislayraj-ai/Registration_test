@@ -7,6 +7,7 @@ $name = $decode['name'];
 $age = $decode['age'];
 $email = $decode['email'];
 $mob = $decode['mob'];
+$passwrd = $decode['passwrd'];
 
 $output= [] ;
 if($name && $age && $email && $mob){
@@ -15,6 +16,7 @@ if($name && $age && $email && $mob){
     $output["age"] = $age;
     $output["mob"] = $mob;
     $output["email"] = $email;
+    $output["passwrd"] = $passwrd;
 
 echo  json_encode($output);
 }
