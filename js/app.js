@@ -53,7 +53,7 @@ submitBtn.addEventListener('click', (e) => {
     const name = data_pass.name;
     console.log(passwrd);
     if (pass.value == passwrd && login_name.value == name) {
-      console.log('Password matched');
+      window.location.replace('home.php');
     } else {
       console.log('Invalid');
     }

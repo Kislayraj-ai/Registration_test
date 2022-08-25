@@ -13,9 +13,13 @@
 
     <section id="main">
         <div id="container">
-            Welcome
+            <h1>Welcome</h1>
+            <button type="button" id="logout">Logout</button>
         </div>
     </section>
+
+    <!--javascript -->
+    <script type="module" src="js/home.js"></script>
 </body>
 
 </html>

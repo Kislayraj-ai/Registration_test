@@ -28,8 +28,14 @@ body {
   background-color: #fff;
   height: 70%;
   padding: 1rem;
-  /* overflow-y: hidden; */
   position: relative;
+}
+#container h1 {
+  width: 100%;
+  padding: 1rem;
+  background: rgb(0, 149, 255);
+  color: #fff;
+  text-align: center;
 }
 
 #main-form,
@@ -87,15 +93,24 @@ body {
   outline: none;
   box-shadow: 0px 2px 3px rgb(198, 197, 197);
 }
-.actions button {
+.actions button,
+#logout {
   padding: 0.25rem 0.5rem;
   letter-spacing: 0.1rem;
   background: rgb(0, 127, 246);
   color: #fff;
+  border-radius: 0.1rem;
   box-shadow: 0px 2px 3px rgb(198, 197, 197);
   cursor: pointer;
   outline: none;
   border: none;
+}
+#logout {
+  margin-top: 2rem;
+  background: red;
+}
+#logout:hover {
+  background: rgb(204, 2, 2);
 }
 .actions button:hover {
   background: rgb(1, 115, 222);
