@@ -12,35 +12,64 @@
 
 <body>
     <section id="main">
-        <article id="main-form">
-            <h2>registration form</h2>
+        <div id="container">
+            <article id="main-form" class="reg-form show">
+                <h2>registration form</h2>
 
-            <!-- input fileds -->
-            <!-- name -->
-            <div class="form-group">
-                <!-- <label for="name">Name</label> -->
-                <input type="text" id="name" placeholder="Name">
-            </div>
-            <!-- age -->
-            <div class="form-group">
-                <!-- <label for="email">Age</label> -->
-                <input type="text" id="age" placeholder="Age">
-            </div>
-            <!-- mobile number -->
-            <div class="form-group">
-                <!-- <label for="name">Mobile Number</label> -->
-                <input type="number" id="mob" placeholder="Mobile number">
-            </div>
-            <!-- email -->
-            <div class="form-group">
-                <!-- <label for="name">Email</label> -->
-                <input type="email" id="email" placeholder="E-Mail">
-            </div>
-            <!-- submit -->
-            <div class="form-group actions">
-                <button id="submit">Submit</button>
-            </div>
-        </article>
+                <!-- input fileds -->
+                <!-- name -->
+                <div class="form-group">
+                    <!-- <label for="name">Name</label> -->
+                    <input type="text" id="name" placeholder="Name">
+                </div>
+                <!-- age -->
+                <div class="form-group">
+                    <!-- <label for="email">Age</label> -->
+                    <input type="text" id="age" placeholder="Age">
+                </div>
+                <!-- mobile number -->
+                <div class="form-group">
+                    <!-- <label for="name">Mobile Number</label> -->
+                    <input type="number" id="mob" placeholder="Mobile number">
+                </div>
+                <!-- email -->
+                <div class="form-group">
+                    <!-- <label for="name">Email</label> -->
+                    <input type="email" id="email" placeholder="E-Mail">
+                </div>
+                <!--password-->
+                <div class="form-group">
+                    <!-- <label for="name">Email</label> -->
+                    <input type="password" id="passwrd" placeholder="password">
+                </div>
+                <!-- submit -->
+                <div class="form-group actions">
+                    <button id="submit">Submit</button>
+                </div>
+            </article>
+
+            <article id="login-form" class="login-form hide">
+                <h2>login form</h2>
+
+                <!-- input fileds -->
+                <!-- name -->
+                <div class="form-group">
+                    <!-- <label for="name">Name</label> -->
+                    <input type="text" id="login_name" placeholder="Name">
+                </div>
+
+                <!-- email -->
+                <div class="form-group">
+                    <!-- <label for="name">Email</label> -->
+                    <input type="password" id="pass" placeholder="password">
+                </div>
+                <!-- submit -->
+                <div class="form-group actions">
+                    <button id="submit">Login</button>
+                    <button id="submit">Back</button>
+                </div>
+            </article>
+        </div>
     </section>
 
     <!-- javascript file -->
