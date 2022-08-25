@@ -65,8 +65,8 @@
                 </div>
                 <!-- submit -->
                 <div class="form-group actions">
-                    <button id="login">Login</button>
-                    <button id="back">Back</button>
+                    <button id="submit">Login</button>
+                    <button id="submit">Back</button>
                 </div>
             </article>
         </div>

@@ -10,8 +10,6 @@ const passwrd = get('#passwrd');
 /*===form selection ====*/
 const reg_form = get('.reg-form');
 const login_form = get('.login-form');
-const backBtn = get('#back');
-const loginBtn = get('#login');
 
 submitBtn.addEventListener('click', (e) => {
   //   console.log('Hello');
@@ -32,30 +30,10 @@ submitBtn.addEventListener('click', (e) => {
     });
 
     const data = await response.json();
-    // console.log(data);
-    localStorage.setItem('data', JSON.stringify(data));
+    console.log(data);
   };
 
   sendInfo();
   login_form.classList.remove('hide');
   reg_form.classList.remove('show');
-  backBtn.addEventListener('click', () => {
-    login_form.classList.add('hide');
-    reg_form.classList.add('show');
-  });
-
-  /* selection  for login form */
-  loginBtn.addEventListener('click', () => {
-    const pass = get('#pass');
-    const login_name = get('#login_name');
-    const data_pass = JSON.parse(localStorage.getItem('data'));
-    const passwrd = data_pass.passwrd;
-    const name = data_pass.name;
-    console.log(passwrd);
-    if (pass.value == passwrd && login_name.value == name) {
-      console.log('Password matched');
-    } else {
-      console.log('Invalid');
-    }
-  });
 });
