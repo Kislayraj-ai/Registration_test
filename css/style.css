@@ -93,8 +93,7 @@ body {
   outline: none;
   box-shadow: 0px 2px 3px rgb(198, 197, 197);
 }
-.actions button,
-#logout {
+.actions button {
   padding: 0.25rem 0.5rem;
   letter-spacing: 0.1rem;
   background: rgb(0, 127, 246);
@@ -145,4 +144,37 @@ body {
   .actions button {
     font-size: 0.8rem;
   }
+}
+
+/*
+
+===========
+===========
+home page
+===========
+===========
+*/
+#home_heading {
+  text-transform: capitalize;
+}
+#logout {
+  padding: 0.25rem 0.5rem;
+  letter-spacing: 0.1rem;
+  background: rgb(0, 127, 246);
+  color: #fff;
+  border-radius: 0.1rem;
+  box-shadow: 0px 2px 3px rgb(198, 197, 197);
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+#logout {
+  margin-top: 2rem;
+  background: red;
+}
+#logout:hover {
+  background: rgb(204, 2, 2);
+}
+.actions button:hover {
+  background: rgb(1, 115, 222);
 }

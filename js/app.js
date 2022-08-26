@@ -11,6 +11,9 @@ const passwrd = get('#passwrd');
 const reg_form = get('.reg-form');
 const login_form = get('.login-form');
 
+const loginBtn = get('#login');
+const backBtn = get('#back');
+
 submitBtn.addEventListener('click', (e) => {
   //   console.log('Hello');
   const sendInfo = async () => {
@@ -30,14 +33,14 @@ submitBtn.addEventListener('click', (e) => {
     });
 
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
+    localStorage.setItem('data', JSON.stringify(data));
   };
 
   sendInfo();
   login_form.classList.remove('hide');
   reg_form.classList.remove('show');
-<<<<<<< HEAD
-=======
+
   backBtn.addEventListener('click', () => {
     login_form.classList.add('hide');
     reg_form.classList.add('show');
@@ -52,10 +55,10 @@ submitBtn.addEventListener('click', (e) => {
     const name = data_pass.name;
     console.log(passwrd);
     if (pass.value == passwrd && login_name.value == name) {
+      localStorage.setItem('success', 1);
       window.location.replace('home.php');
     } else {
       console.log('Invalid');
     }
   });
->>>>>>> feature1.1
 });

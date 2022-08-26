@@ -13,7 +13,8 @@
 
     <section id="main">
         <div id="container">
-            <h1>Welcome</h1>
+            <h1 id="home_heading">welcome <span id="user_name"></span></h1>
+
             <button type="button" id="logout">Logout</button>
         </div>
     </section>
