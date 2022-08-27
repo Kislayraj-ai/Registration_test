@@ -16,28 +16,40 @@ const backBtn = get('#back');
 
 submitBtn.addEventListener('click', (e) => {
   //   console.log('Hello');
-  const sendInfo = async () => {
-    const jsonData = {
-      name: name.value,
-      age: age.value,
-      mob: mob.value,
-      email: email.value,
-      passwrd: passwrd.value,
+  const nameVal = name.value;
+  const ageVal = age.value;
+  const mobVal = mob.value;
+  const emailVal = email.value;
+  const passVal = passwrd.value;
+  if (
+    nameVal != ' ' &&
+    (ageVal != ' ') & (mobVal != ' ') &&
+    emailVal != ' ' &&
+    passVal != ' '
+  ) {
+    const sendInfo = async () => {
+      const jsonData = {
+        name: nameVal,
+        age: ageVal,
+        mob: mobVal,
+        email: emailVal,
+        passwrd: passVal,
+      };
+      const response = await fetch('./php_data/form_data.php', {
+        method: 'POST',
+        body: JSON.stringify(jsonData),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const data = await response.json();
+      // console.log(data);
+      localStorage.setItem('data', JSON.stringify(data));
     };
-    const response = await fetch('./php_data/form_data.php', {
-      method: 'POST',
-      body: JSON.stringify(jsonData),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
 
-    const data = await response.json();
-    // console.log(data);
-    localStorage.setItem('data', JSON.stringify(data));
-  };
-
-  sendInfo();
+    sendInfo();
+  }
   login_form.classList.remove('hide');
   reg_form.classList.remove('show');
 
