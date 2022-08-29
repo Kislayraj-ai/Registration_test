@@ -1,5 +1,6 @@
 import { get, getAll } from './get.js';
 
+//*==== input field selection =====*//
 const name = get('#name');
 const age = get('#age');
 const mob = get('#mob');
@@ -7,7 +8,7 @@ const email = get('#email');
 const submitBtn = get('#submit');
 const passwrd = get('#passwrd');
 
-/*===form selection ====*/
+//*=== form selection ====*//
 const reg_form = get('.reg-form');
 const login_form = get('.login-form');
 
@@ -35,6 +36,7 @@ submitBtn.addEventListener('click', (e) => {
         email: emailVal,
         passwrd: passVal,
       };
+
       const response = await fetch('./php_data/form_data.php', {
         method: 'POST',
         body: JSON.stringify(jsonData),
@@ -65,12 +67,24 @@ submitBtn.addEventListener('click', (e) => {
     const data_pass = JSON.parse(localStorage.getItem('data'));
     const passwrd = data_pass.passwrd;
     const name = data_pass.name;
-    console.log(passwrd);
+    // console.log(passwrd);
     if (pass.value == passwrd && login_name.value == name) {
       localStorage.setItem('success', 1);
+      const passError = get('.login-passwrd');
+      const nameError = get('.login-name');
+      if (passError.classList.contains('error'))
+        passError.classList.remove('error');
+      if (nameError.classList.contains('error'))
+        nameError.classList.remove('error');
       window.location.replace('home.php');
-    } else {
-      console.log('Invalid');
     }
+    const loginValidation = (field, select, value) => {
+      if (field.value != value) {
+        const input = get(select);
+        input.classList.add('error');
+      }
+    };
+    loginValidation(pass, '.login-passwrd', passwrd);
+    loginValidation(login_name, '.login-name', name);
   });
 });

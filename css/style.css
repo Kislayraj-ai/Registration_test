@@ -1,3 +1,11 @@
+:root {
+  --spacing: 0.1rem;
+  --main-back: rgb(225, 224, 224);
+  --logout: red;
+  --logout-hover: rgb(204, 2, 2);
+  --radius: 0.1rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +29,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(225, 224, 224);
+  background: var(--main-back);
 }
 #container {
   width: 60%;
@@ -47,7 +55,7 @@ body {
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  border-radius: 0.2rem;
+  border-radius: var(--radius);
   gap: 1.6rem;
 }
 #login-form {
@@ -73,7 +81,7 @@ body {
 
 #main-form h2 {
   margin-bottom: 2rem;
-  letter-spacing: 0.1rem;
+  letter-spacing: var(--spacing);
   text-transform: capitalize;
 }
 .form-group {
@@ -89,16 +97,21 @@ body {
   align-items: center;
   flex-direction: column;
   border: 0.5px solid rgb(198, 197, 197);
-  border-radius: 0.1rem;
+  border-radius: var(--radius);
   outline: none;
   box-shadow: 0px 2px 3px rgb(198, 197, 197);
 }
+
+.form-group input.error {
+  border: 1px solid var(--logout);
+}
+
 .actions button {
   padding: 0.25rem 0.5rem;
-  letter-spacing: 0.1rem;
+  letter-spacing: var(--spacing);
   background: rgb(0, 127, 246);
   color: #fff;
-  border-radius: 0.1rem;
+  border-radius: var(--radius);
   box-shadow: 0px 2px 3px rgb(198, 197, 197);
   cursor: pointer;
   outline: none;
@@ -106,10 +119,10 @@ body {
 }
 #logout {
   margin-top: 2rem;
-  background: red;
+  background: var(--logout);
 }
 #logout:hover {
-  background: rgb(204, 2, 2);
+  background: var(--logout-hover);
 }
 .actions button:hover {
   background: rgb(1, 115, 222);
@@ -159,10 +172,10 @@ home page
 }
 #logout {
   padding: 0.25rem 0.5rem;
-  letter-spacing: 0.1rem;
+  letter-spacing: var(--spacing);
   background: rgb(0, 127, 246);
   color: #fff;
-  border-radius: 0.1rem;
+  border-radius: var(--radius);
   box-shadow: 0px 2px 3px rgb(198, 197, 197);
   cursor: pointer;
   outline: none;
@@ -170,10 +183,10 @@ home page
 }
 #logout {
   margin-top: 2rem;
-  background: red;
+  background: var(--logout);
 }
 #logout:hover {
-  background: rgb(204, 2, 2);
+  background: var(--logout-hover);
 }
 .actions button:hover {
   background: rgb(1, 115, 222);

@@ -1,5 +1,6 @@
 <?php
 
+try{
 $input = file_get_contents("php://input");
 $decode = json_decode($input,true);
 
@@ -19,6 +20,10 @@ if($name && $age && $email && $mob){
     $output["passwrd"] = $passwrd;
 
 echo  json_encode($output);
+}
+}
+catch(Exception $e){
+    echo json_encode($e->getMessage());
 }
 
 ?>

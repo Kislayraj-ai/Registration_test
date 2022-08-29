@@ -25,7 +25,7 @@
                 <!-- age -->
                 <div class="form-group">
                     <!-- <label for="email">Age</label> -->
-                    <input type="text" id="age" placeholder="Age">
+                    <input type="number" id="age" placeholder="Age">
                 </div>
                 <!-- mobile number -->
                 <div class="form-group">
@@ -44,7 +44,7 @@
                 </div>
                 <!-- submit -->
                 <div class="form-group actions">
-                    <button id="submit">Submit</button>
+                    <button id="submit">Sign up</button>
                 </div>
             </article>
 
@@ -55,13 +55,15 @@
                 <!-- name -->
                 <div class="form-group">
                     <!-- <label for="name">Name</label> -->
-                    <input type="text" id="login_name" placeholder="Name">
+                    <input type="text" class="login-name" id="login_name"
+                        placeholder="Name">
                 </div>
 
                 <!-- email -->
                 <div class="form-group">
                     <!-- <label for="name">Email</label> -->
-                    <input type="password" id="pass" placeholder="password">
+                    <input type="password" class="login-passwrd" id="pass"
+                        placeholder="password">
                 </div>
                 <!-- submit -->
                 <div class="form-group actions">
