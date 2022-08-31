@@ -14,8 +14,10 @@ try{
 
  $output = [] ; 
  if(mysqli_num_rows($result) > 0){
-    $row = mysqli_fetch_assoc($result);
 
+    $row = mysqli_fetch_assoc($result);
+    session_start();
+    $_SESSION['user_name'] = $row['u_name'];
    $output['name'] = $row["u_name"]; 
    $output['password'] = $row["u_pass"]; 
  }
