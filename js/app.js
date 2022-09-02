@@ -11,9 +11,10 @@ const passwrd = get('#passwrd');
 //*=== form selection ====*//
 const reg_form = get('.reg-form');
 const login_form = get('.login-form');
+const user_login = get('#user_login');
 
 const loginBtn = get('#login');
-const backBtn = get('#back');
+const signBtn = get('#signin');
 
 submitBtn.addEventListener('click', (e) => {
   //   console.log('Hello');
@@ -46,44 +47,60 @@ submitBtn.addEventListener('click', (e) => {
       });
 
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
+      if (data == 'success') {
+        alert('Sign Up Completed');
+        name.value = '';
+        age.value = '';
+        mob.value = '';
+        email.value = '';
+        passwrd.value = '';
+      }
     };
 
     sendInfo();
   }
 
+  // login_form.classList.remove('hide');
+  // reg_form.classList.remove('show');
+});
+
+/* selection  for login form */
+
+//* signin button fucntion
+signBtn.addEventListener('click', () => {
+  login_form.classList.add('hide');
+  reg_form.classList.add('show');
+});
+
+loginBtn.addEventListener('click', () => {
+  const pass = get('#pass');
+  const login_name = get('#login_name');
+  const json_data = {
+    name: login_name.value,
+    pass: pass.value,
+  };
+  const get_login_details = async () => {
+    const response = await fetch('./php_data/get_data.php', {
+      method: 'POST',
+      body: JSON.stringify(json_data),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const data = await response.json();
+    // console.log(data);
+    if (data.success == 1) {
+      window.location.replace('home.php');
+    } else {
+      alert('Invalid User name or password');
+    }
+  };
+
+  get_login_details();
+});
+
+user_login.addEventListener('click', () => {
   login_form.classList.remove('hide');
   reg_form.classList.remove('show');
-
-  backBtn.addEventListener('click', () => {
-    login_form.classList.add('hide');
-    reg_form.classList.add('show');
-  });
-
-  /* selection  for login form */
-  loginBtn.addEventListener('click', () => {
-    const pass = get('#pass');
-    const login_name = get('#login_name');
-    const json_data = {
-      name: login_name.value,
-    };
-    const get_login_details = async () => {
-      const response = await fetch('./php_data/get_data.php', {
-        method: 'POST',
-        body: JSON.stringify(json_data),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      const data = await response.json();
-
-      if (data.success == 1) {
-        window.location.replace('home.php');
-      } else {
-        alert('Invalid User name or password');
-      }
-    };
-
-    get_login_details();
-  });
 });

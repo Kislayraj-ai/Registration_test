@@ -7,7 +7,7 @@ try{
  $decode = json_decode($input,true);
 
  $name = mysqli_real_escape_string($conn,$decode['name']);
- $pass = mysqli_real_escape_string($conn,md5($decode['name']));
+ $pass = mysqli_real_escape_string($conn,md5($decode['pass']));
 
  $sql = "SELECT u_name, u_pass from user_detail where u_name ='{$name}' and 
  u_pass = '{$pass}'
@@ -20,7 +20,7 @@ try{
     $row = mysqli_fetch_assoc($result);
     session_start();
     $_SESSION['user_name'] = $row['u_name'];
-    // $output['name'] = $row["u_name"]; 
+ 
    $output["success"] = 1; 
  }
 

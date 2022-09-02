@@ -45,6 +45,7 @@
                 <!-- submit -->
                 <div class="form-group actions">
                     <button id="submit">Sign up</button>
+                    <a id="user_login" href="#">or, Login</a>
                 </div>
             </article>
 
@@ -68,7 +69,7 @@
                 <!-- submit -->
                 <div class="form-group actions">
                     <button id="login">Login</button>
-                    <button id="back">Back</button>
+                    <a href="#" id="signin">or, Signin</a>
                 </div>
             </article>
         </div>
