@@ -46,12 +46,12 @@ submitBtn.addEventListener('click', (e) => {
       });
 
       const data = await response.json();
-      // console.log(data);
-      localStorage.setItem('data', JSON.stringify(data));
+      console.log(data);
     };
 
     sendInfo();
   }
+
   login_form.classList.remove('hide');
   reg_form.classList.remove('show');
 
@@ -64,27 +64,26 @@ submitBtn.addEventListener('click', (e) => {
   loginBtn.addEventListener('click', () => {
     const pass = get('#pass');
     const login_name = get('#login_name');
-    const data_pass = JSON.parse(localStorage.getItem('data'));
-    const passwrd = data_pass.passwrd;
-    const name = data_pass.name;
-    // console.log(passwrd);
-    if (pass.value == passwrd && login_name.value == name) {
-      localStorage.setItem('success', 1);
-      const passError = get('.login-passwrd');
-      const nameError = get('.login-name');
-      if (passError.classList.contains('error'))
-        passError.classList.remove('error');
-      if (nameError.classList.contains('error'))
-        nameError.classList.remove('error');
-      window.location.replace('home.php');
-    }
-    const loginValidation = (field, select, value) => {
-      if (field.value != value) {
-        const input = get(select);
-        input.classList.add('error');
+    const json_data = {
+      name: login_name.value,
+    };
+    const get_login_details = async () => {
+      const response = await fetch('./php_data/get_data.php', {
+        method: 'POST',
+        body: JSON.stringify(json_data),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      const data = await response.json();
+
+      if (data.success == 1) {
+        window.location.replace('home.php');
+      } else {
+        alert('Invalid User name or password');
       }
     };
-    loginValidation(pass, '.login-passwrd', passwrd);
-    loginValidation(login_name, '.login-name', name);
+
+    get_login_details();
   });
 });
