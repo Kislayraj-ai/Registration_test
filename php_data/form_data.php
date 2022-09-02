@@ -12,7 +12,7 @@ $name = mysqli_real_escape_string($conn,$decode['name']);
 $age = mysqli_real_escape_string($conn,$decode['age']);
 $email = mysqli_real_escape_string($conn,$decode['email']);
 $mob = mysqli_real_escape_string($conn,$decode['mob']);
-$passwrd =  mysqli_real_escape_string($conn,$decode['passwrd']);
+$passwrd =  mysqli_real_escape_string($conn,md5($decode['passwrd']));
 
 
 

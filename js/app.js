@@ -76,35 +76,11 @@ submitBtn.addEventListener('click', (e) => {
         },
       });
       const data = await response.json();
-      console.log(data);
-      const user_login_name = data.name;
-      const user_login_password = data.password;
 
-      // console.log(user_login_name);
-      // console.log(user_login_password);
-
-      if (
-        login_name.value === user_login_name &&
-        pass.value === user_login_password
-      ) {
-        // console.log('Valid');
-        const passError = get('.login-passwrd');
-        const nameError = get('.login-name');
-        if (passError.classList.contains('error'))
-          passError.classList.remove('error');
-        if (nameError.classList.contains('error'))
-          nameError.classList.remove('error');
+      if (data.success == 1) {
         window.location.replace('home.php');
-        const loginValidation = (field, select, value) => {
-          if (field.value != value) {
-            const input = get(select);
-            input.classList.add('error');
-          }
-        };
-        loginValidation(pass, '.login-passwrd', user_login_name);
-        loginValidation(login_name, '.login-name', user_login_password);
       } else {
-        console.log('Invalid');
+        alert('Invalid User name or password');
       }
     };
 
